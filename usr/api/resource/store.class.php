@@ -40,6 +40,7 @@ class store extends \api\simple_resource {
                 'id'                	=> [],
                 'created_before'        => [],
                 'created_after'         => [],
+                'name'                  => [],
                 'search'            	=> [],
                 'active'            	=> [1],
                 'offset_start'      	=> 0,
