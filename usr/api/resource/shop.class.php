@@ -6,20 +6,22 @@ class shop extends \api\simple_resource {
     // this is the data structure for the resource
     protected $_data                	= [
         'id'                          	=> null,
+        'store'                         => null,
         'created'                   	=> null,
         'modified'                   	=> null,
-        'payment'                       => null,
         'status'                       	=> null,
-        'email'                       	=> null,
         'name'                       	=> null,
+        'email'                       	=> null,
         'address'                       => null,
+        'comments'                      => null,
+        'total'                         => null,
         'products'                      => [
             'id'                        => null,
             'created'                   => null,
             'modified'                  => null,
-            'sku'                       => null,
-            'seo'                       => null,
+            'store'                     => null,
             'name'                      => null,
+            'description'               => null,
             'img'                       => null,
             'price'                     => null,
             'quantity'                  => null
@@ -36,7 +38,8 @@ class shop extends \api\simple_resource {
                 'id'                	=> [],
                 'created_before'        => [],
                 'created_after'         => [],
-                'seo'               	=> [],
+                'store'                 => [],
+                'store_id'              => [],
                 'search'            	=> [],
                 'offset_start'      	=> 0,
                 'offset_end'        	=> 100
@@ -46,12 +49,14 @@ class shop extends \api\simple_resource {
             'fields'                	=> [
                 'id'                	=> null,
                 'created'               => true,
-                'modified'              => null,
-                'payment'               => null,
+                'store'                 => null,
+                'store_id'              => null,
                 'status'               	=> null,
-                'email'               	=> null,
                 'name'               	=> null,
-                'address'               => null
+                'email'               	=> null,
+                'address'               => null,
+                'comments'              => null,
+                'total'                 => null
             ],
             'relations'             	=> [
                 'product_id'            => [
@@ -59,15 +64,15 @@ class shop extends \api\simple_resource {
                     'fields'            => [
                         'shop_id'       => null,
                         'product_id'    => null,
-                        'quantity'      => null
+                        'quantity'      => null,
+                        'price'         => null
                     ]
                 ]
             ]
         ],
         'delete'                    	=> [
             'fields'                	=> [
-                'id'                	=> null,
-                'seo'               	=> null
+                'id'                	=> null
             ]
         ]
     ];

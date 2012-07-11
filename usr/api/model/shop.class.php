@@ -6,17 +6,22 @@ class shop extends \api\simple_model {
     // this is the fields/types for the model
     protected $_fields              = [
         'id'                        => 'number',
+        'store_id'                  => 'number',
         'created'                   => 'datetime',
         'modified'                  => 'datetime',
-        'payment'                   => 'text',
         'status'                    => 'text',
         'name'                      => 'text',
-        'address'                   => 'text'
+        'email'                     => 'email',
+        'address'                   => 'text',
+        'comments'                  => 'text',
+        'total'                     => 'price'
     ];
 
     // these are the relations for the model
     protected $_relations           = [
-        'many_one'                  => [],
+        'many_one'                  => [
+            'store'
+        ],
         'one_many'                  => [],
         'many_many'                 => [
             'product'
@@ -26,17 +31,20 @@ class shop extends \api\simple_model {
     protected $_dependencies        = [
         'product'                   => null,
         'shop'                      => null,
+        'store'                     => null,
         'product_shop'              => null
     ];
 
     protected $_validate            = [
         'save'                      => [
-            'relation'              => [],
+            'relation'              => [
+                'store'
+            ],
             'field'                 => [
-                'payment',
                 'status',
+                'email',
                 'name',
-                'address'
+                'total'
             ]
         ]
     ];
@@ -54,7 +62,7 @@ class shop extends \api\simple_model {
             'shop_id'       => $this->id,
             'active'        => 1,
             'offset_start'  => 0,
-            'offset_end'    => 1000
+            'offset_end'    => 30
         ];
 
         // execute find call and return result

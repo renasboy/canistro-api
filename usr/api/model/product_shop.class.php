@@ -7,7 +7,8 @@ class product_shop extends \api\simple_model {
     protected $_fields              = [
         'product_id'                => 'number',
         'shop_id'                   => 'number',
-        'quantity'                  => 'number'
+        'quantity'                  => 'number',
+        'price'                     => 'number'
     ];
 
     // these are the relations for the model
@@ -32,7 +33,8 @@ class product_shop extends \api\simple_model {
                 'shop'
             ],
             'field'                 => [
-                'quantity'
+                'quantity',
+                'price'
             ]
         ]
     ];
