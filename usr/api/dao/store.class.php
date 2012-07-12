@@ -18,6 +18,7 @@ class store extends \api\simple_dao {
 
         $filters[]  = $this->_condition_query('store.id', 'is', $filter, 'id');
         $filters[]  = $this->_condition_query('store.name', 'is', $filter, 'name');
+        $filters[]  = $this->_condition_query('store.email', 'is', $filter, 'email');
         $filters[]  = $this->_condition_query('store.active', 'is', $filter, 'active');
 
         $or         = [];

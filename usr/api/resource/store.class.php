@@ -19,6 +19,7 @@ class store extends \api\simple_resource {
         'logo'                       	=> null,
         'cover'                       	=> null,
         'total_products'                => null,
+        'active'                        => null,
         'products'                      => [
             'id'                        => null,
             'created'                   => null,
@@ -41,6 +42,7 @@ class store extends \api\simple_resource {
                 'created_before'        => [],
                 'created_after'         => [],
                 'name'                  => [],
+                'email'                 => [],
                 'search'            	=> [],
                 'active'            	=> [1],
                 'offset_start'      	=> 0,
