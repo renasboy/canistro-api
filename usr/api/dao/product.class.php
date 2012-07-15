@@ -30,6 +30,7 @@ class product extends \api\simple_dao {
         $filters[]  = $this->_condition_query('product.name', 'is', $filter, 'name');
         $filters[]  = $this->_condition_query('product.active', 'is', $filter, 'active');
 
+        $filters[]  = $this->_condition_query('store.name', 'is', $filter, 'store');
         $filters[]  = $this->_condition_query('product.store_id', 'is', $filter, 'store_id');
 
         $filters[]  = $this->_condition_query('product_shop.shop_id', 'is', $filter, 'shop_id');

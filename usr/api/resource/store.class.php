@@ -27,7 +27,8 @@ class store extends \api\simple_resource {
             'name'                      => null,
             'description'               => null,
             'img'                       => null,
-            'price'                     => null
+            'price'                     => null,
+            'active'                    => null
         ]
     ];
 

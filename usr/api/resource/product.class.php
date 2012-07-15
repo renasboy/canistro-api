@@ -12,7 +12,8 @@ class product extends \api\simple_resource {
         'name'                       	=> null,
         'description'                   => null,
         'img'                       	=> null,
-        'price'                       	=> null
+        'price'                       	=> null,
+        'active'                        => null
     ];
 
     // these are default request options
@@ -23,6 +24,7 @@ class product extends \api\simple_resource {
                 'id'                	=> [],
                 'created_before'        => [],
                 'created_after'         => [],
+                'store'                 => [],
                 'store_id'              => [],
                 'search'            	=> [],
                 'active'            	=> [1],
